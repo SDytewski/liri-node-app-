@@ -1,4 +1,4 @@
-//require("dotenv").config();
+require("dotenv").config();
 
 var Spotify = require('node-spotify-api');
 
@@ -12,6 +12,6 @@ spotify.search({ type: 'track', query: 'All the Small Things' }, function(err, d
     return console.log('Error occurred: ' + err);
   }
  
-console.log(data); 
+console.log(data.tracks.items[0].album.artists[0].name); 
 });
 
