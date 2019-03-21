@@ -1,6 +1,6 @@
 # liri-node-app-
 
- LIRI is a Language Interpretation and Recognition Interface. LIRI will be a command line node app that takes in parameters and gives you back data using Node.JS in the terminal. There are only four commands that can be used in the terminal:
+ LIRI is a Language Interpretation and Recognition Interface. LIRI is a command line node app that takes in parameters and gives you back data using Node.JS in the terminal. Spotify, Bands-in-Town, and OMDB APIs were used to get data. There are only four commands that can be used in the terminal:
 
 
 
@@ -12,6 +12,8 @@ movie-this
 
 do-what-it-says
 
+
+For reference:  [The liri file is here](liri.js)
 
 
 # To use the Spotify API with Node.JS, we show the following information about a song in the terminal.
@@ -89,11 +91,15 @@ node liri.js movie-this
 
  node liri.js do-what-it-says
  
- If this is typed into the terminal, then information will be read in the random.txt file. This will ouput the command that is inside the text file and run it in the terminal.  Currently I am referenecing the "movie-this" command and a name of a movie "Willow."  I could put "spotify-this-song" and a name of a song, or "concert-this" and a name of a band, or choose a different movie with "movie-this." 
+ If this is typed into the terminal, then information will be read in the random.txt file.
+ 
+ For reference:  [The random.txt file is here](random.txt)
+ 
+  This will ouput the command that is inside the text file and run it in the terminal.  Currently in random.txt, I am referenecing the "movie-this" command and a name of a movie "Willow."  I could have put "spotify-this-song" and a name of a song, or "concert-this" and a name of a band, or choose a different movie with "movie-this." 
 
 ![do-what-it-says](images/do-what-it-says.png)
 
-
+*I am the only contributer to this project
 
 
 
