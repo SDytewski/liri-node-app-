@@ -1,23 +1,28 @@
+//loads information from a .env file 
 require("dotenv").config();
 
+//Spotify installation
 var Spotify = require('node-spotify-api');
 // Import the FS package for read/write.
 var fs = require("fs");
-
+//axios installation
 var axios = require("axios");
-
+//our  api keys
 var keys = require("./keys.js");
-
+//will be used for bands-in-town date formatting
 var moment = require('moment')
 
 
 var spotify = new Spotify(keys.spotify);
+//storing our arguments depending on where the user types in the terminal.
 var arg2 = process.argv[3];
 var arg1 = process.argv[2];
 
 
 startPlay(arg1, arg2);
 
+
+//perform command depending on what the user types
 function startPlay(arg1, arg2) {
 
   switch (arg1) {
@@ -35,6 +40,7 @@ function startPlay(arg1, arg2) {
   }
 }
 
+//default song if undefined
 function getMeSpotify(songName) {
   if (songName === undefined) {
 
@@ -42,7 +48,7 @@ function getMeSpotify(songName) {
 
   }
 
-
+// display song information on screen
   spotify.search({ type: 'track', query: songName }, function (err, data) {
     if (err) {
       return console.log('Error occurred: ' + err);
@@ -50,10 +56,9 @@ function getMeSpotify(songName) {
 
     console.log(data.tracks.items[0].album.artists[0].name);
     var songs = data.tracks.items;
-    // console.log("song info:" +song);
+    
     for (var i = 0; i < songs.length; i++) {
       console.log(i);
-      // console.log("artist(s): " + songs[i].artists.map(getArtistNames));
       console.log("song name: " + songs[i].name);
       console.log("preview song: " + songs[i].preview_url);
       console.log("album: " + songs[i].album.name);
@@ -63,11 +68,13 @@ function getMeSpotify(songName) {
 
 }
 
-
+//if no movie is selected
 function getMovie(movieName) {
   if (movieName === undefined) {
     movieName = "Mr Nobody";
   }
+
+  //display movie information
   var url = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=fe8b3690";
   axios.get(url).then(
     function (response) {
@@ -117,22 +124,7 @@ function getMyBand(artist) {
     })
 }
 
-// Next, we store the text given to us from the command line.
-//var text = process.argv[2];
-
-// Next, we append the text into the "sample.txt" file.
-// If the file didn't exist, then it gets created on the fly.
-//fs.appendFile("sample.txt", text, function(err) {
-
-// If an error was experienced we will log it.
-//if (err) {
-//console.log(err);
-// }
-
-// This block of code will read from the "movies.txt" file.
-// It's important to include the "utf8" parameter or the code will provide stream data (garbage)
-// The code will store the contents of the reading inside the variable "data"
-
+//our function that reads the random.txt file and runs it.
 function doWhatItSays(){
 
 
@@ -142,18 +134,11 @@ function doWhatItSays(){
     if (error) {
       return console.log(error);
     }
-    // We will then print the contents of data
-    
-
-    // Then split it by commas (to make it more readable)
-    // var dataArr = data.split(",");
-
-    // We will then re-display the content as an array for later use.
-    // console.log(dataArr);
-
+        //split it by commas (to make it more readable)
     var dataArr = data.split(',');
+    // We will then re-display the content as an array for later use.
+    
     startPlay(dataArr[0], dataArr[1]);
-
 
   });
 
