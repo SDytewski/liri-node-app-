@@ -1,6 +1,6 @@
 # liri-node-app-
 
- LIRI is a Language Interpretation and Recognition Interface. LIRI is a command line node app that takes in parameters and gives you back data using Node.JS in the terminal. Spotify, Bands-in-Town, and OMDB APIs were used to get data. There are only four commands that can be used in the terminal:
+ LIRI is a Language Interpretation and Recognition Interface. LIRI is a command line node app that takes in parameters and gives you back data using Node.JS.  Everything is typed inside the terminal. Spotify, Bands-in-Town, and OMDB APIs were used to get data. There are only four commands that can be used in the terminal:
 
 
 
@@ -12,8 +12,8 @@ movie-this
 
 do-what-it-says
 
-
-For reference:  [The liri file is here](liri.js)
+The beauty of NodeJS is it uses asynchronous threading, so their isn't much lag time when calling information. The callbacks are instant. This great for back end information.  
+For reference to my main file:  [The liri file is here](liri.js)
 
 
 # To use the Spotify API with Node.JS, we show the following information about a song in the terminal.
@@ -41,7 +41,7 @@ node liri.js spotify-this-song
 
 
 
-# The second command uses the "Bands in Town" API with   the axios package to fetch html information and display it in the console. It displays:
+# The second command uses the "Bands in Town" API with the axios package to fetch html information and display it in the console. It displays:
 
 * Name of the venue
 * Venue location
@@ -56,7 +56,7 @@ node liri.js concert-this "name of band"
 *The date format uses the Moment package. 
 
 
-#  The third API uses OMDB information for a movie and displays information.  
+#  The third command uses the OMDB API. The user picks a movie and it displays information. The axios package was also used with this API to fetch HTML information.
 
   * Title of the movie.
    * Year the movie came out.
@@ -84,7 +84,7 @@ node liri.js movie-this
 
 
 
-# The final command uses the Node FS (File System Module) package.
+# The final command uses the Node FS (File System Module) package. 
 
  Typing:
 
