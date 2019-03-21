@@ -82,7 +82,7 @@ node liri.js movie-this
 
 
 
-# The final command uses the Node FS (File Ssystem Module) package.
+# The final command uses the Node FS (File System Module) package.
 
  Typing:
 
