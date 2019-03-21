@@ -12,7 +12,7 @@ movie-this
 
 do-what-it-says
 
-The beauty of NodeJS is it uses asynchronous threading, so their isn't much lag time when calling information. The callbacks are instant. This great for back end information.  
+The beauty of NodeJS is it uses asynchronous threading, so their isn't much lag time when calling information. The callbacks are instant. This is great for back end information.  
 For reference to my main file:  [The liri file is here](liri.js)
 
 
