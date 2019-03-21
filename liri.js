@@ -38,7 +38,7 @@ function startPlay(arg1, arg2) {
 function getMeSpotify(songName) {
   if (songName === undefined) {
 
-    songName = "The Sign"
+    songName = "The Sign Ace Of Base"
 
   }
 
